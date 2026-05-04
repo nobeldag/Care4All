@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Care4All</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #061f1f;
+      color: white;
+      line-height: 1.6;
+    }
+    header {
+      min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75)),
+      url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,.75);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+    }
+    nav h2 { color: #50f5b7; }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 18px;
+      font-weight: bold;
+    }
+    nav a:hover { color: #50f5b7; }
+    .hero h1 {
+      font-size: 4rem;
+      color: #50f5b7;
+      text-shadow: 0 0 20px black;
+    }
+    .hero p {
+      max-width: 750px;
+      margin: 20px auto;
+      font-size: 1.25rem;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      background: #50f5b7;
+      color: #06201f;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 25px rgba(80,245,183,.55);
+    }
+    section {
+      padding: 80px 10%;
+    }
+    .title {
+      font-size: 2.5rem;
+      color: #50f5b7;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      margin-top: 35px;
+    }
+    .card {
+      background: rgba(255,255,255,.08);
+      padding: 25px;
+      border-radius: 20px;
+      border: 1px solid rgba(80,245,183,.35);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      transition: .3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(80,245,183,.35);
+    }
+    .card h3 {
+      color: #50f5b7;
+      margin-bottom: 10px;
+    }
+    .split {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+      align-items: center;
+    }
+    .highlight {
+      background: #50f5b7;
+      color: #06201f;
+      padding: 40px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .story {
+      background: rgba(255,255,255,.1);
+      padding: 25px;
+      border-left: 5px solid #50f5b7;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: black;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <h2>Care4All</h2>
+    <div>
+      <a href="#problem">Problem</a>
+      <a href="#solution">Solution</a>
+      <a href="#features">Features</a>
+      <a href="#stories">Stories</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <h1>Care Should Be Clear.</h1>
+      <p>Healthcare should not feel confusing, unaffordable, or out of reach. Care4All helps people compare plans, find affordable providers, and understand their care options in simple language.</p>
+      <a class="btn" href="#problem">Explore the Mission</a>
+    </div>
+  </header>
+
+  <section id="problem">
+    <h2 class="title">The Problem</h2>
+    <div class="split">
+      <p>
+        Healthcare premiums and out-of-pocket costs continue to rise, leaving many people paying more for less coverage. This creates a serious burden for families, especially marginalized communities already facing economic barriers.
+      </p>
+      <div class="highlight">
+        Higher costs. Confusing plans. Less access. People deserve better.
+      </div>
+    </div>
+  </section>
+
+  <section id="solution">
+    <h2 class="title">The Care4All Solution</h2>
+    <p style="text-align:center; max-width:850px; margin:auto;">
+      Care4All is designed to make healthcare easier to understand. Instead of overwhelming users with confusing terms, the site breaks down coverage, prices, and provider options in a way real people can actually use.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Compare Plans</h3>
+        <p>See insurance options side-by-side using clear, simple explanations.</p>
+      </div>
+      <div class="card">
+        <h3>Find Affordable Care</h3>
+        <p>Locate private practices and clinics that offer care with or without insurance.</p>
+      </div>
+      <div class="card">
+        <h3>Know Prices First</h3>
+        <p>View estimated service costs before walking into a clinic or appointment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <h2 class="title">What Makes It Different?</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Simple Language</h3>
+        <p>No confusing healthcare terms. Everything is explained in everyday words.</p>
+      </div>
+      <div class="card">
+        <h3>Accessible Design</h3>
+        <p>Built to be easy to navigate for people who struggle with complex healthcare websites.</p>
+      </div>
+      <div class="card">
+        <h3>Community Powered</h3>
+        <p>Users can share real experiences, recommendations, and advice to help others.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="stories">
+    <h2 class="title">Real People. Real Stories.</h2>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+      Care4All gives users space to speak up about rising healthcare costs, poor coverage, and barriers to care.
+    </p>
+
+    <div class="story">
+      “I should not have to choose between paying my bills and getting medical care.”
+    </div>
+
+    <div class="story">
+      “I want to know the price before I go, not after I get the bill.”
+    </div>
+
+    <div class="story">
+      “Healthcare should be understandable for everyone, not just people who know the system.”
+    </div>
+  </section>
+
+  <section>
+    <h2 class="title">Our Mission</h2>
+    <p style="text-align:center; max-width:850px; margin:auto; font-size:1.1rem;">
+      Care4All fights for healthcare access, transparency, and fairness by helping people make informed decisions before they pay for care.
+    </p>
+  </section>
+
+  <footer>
+    <p>Care4All © 2026 | Affordable Care. Clear Choices. Stronger Communities.</p>
+  </footer>
+
+</body>
+</html>
