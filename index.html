@@ -3,229 +3,351 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Care4All</title>
+  <title>Care4All | Affordable Healthcare Navigator</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-    body {
-      font-family: Arial, sans-serif;
-      background: #061f1f;
-      color: white;
-      line-height: 1.6;
-    }
-    header {
-      min-height: 100vh;
-      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75)),
-      url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80");
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 30px;
-    }
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0,0,0,.75);
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      z-index: 10;
-      backdrop-filter: blur(8px);
-    }
-    nav h2 { color: #50f5b7; }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 18px;
-      font-weight: bold;
-    }
-    nav a:hover { color: #50f5b7; }
-    .hero h1 {
-      font-size: 4rem;
-      color: #50f5b7;
-      text-shadow: 0 0 20px black;
-    }
-    .hero p {
-      max-width: 750px;
-      margin: 20px auto;
-      font-size: 1.25rem;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 14px 28px;
-      background: #50f5b7;
-      color: #06201f;
-      border-radius: 30px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 0 25px rgba(80,245,183,.55);
-    }
-    section {
-      padding: 80px 10%;
-    }
-    .title {
-      font-size: 2.5rem;
-      color: #50f5b7;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 25px;
-      margin-top: 35px;
-    }
-    .card {
-      background: rgba(255,255,255,.08);
-      padding: 25px;
-      border-radius: 20px;
-      border: 1px solid rgba(80,245,183,.35);
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      transition: .3s;
-    }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 0 25px rgba(80,245,183,.35);
-    }
-    .card h3 {
-      color: #50f5b7;
-      margin-bottom: 10px;
-    }
-    .split {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 35px;
-      align-items: center;
-    }
-    .highlight {
-      background: #50f5b7;
-      color: #06201f;
-      padding: 40px;
-      border-radius: 25px;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-    .story {
-      background: rgba(255,255,255,.1);
-      padding: 25px;
-      border-left: 5px solid #50f5b7;
-      border-radius: 15px;
-      margin-top: 20px;
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: black;
-      color: #aaa;
-    }
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+    body{font-family:Arial,sans-serif;background:#061f1f;color:white;line-height:1.6}
+    nav{position:fixed;top:0;width:100%;z-index:10;background:rgba(0,0,0,.8);backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:15px 7%}
+    nav h2{color:#51f5b7}
+    nav a{color:white;text-decoration:none;margin-left:15px;font-weight:bold;font-size:.9rem}
+    nav a:hover{color:#51f5b7}
+    header{min-height:100vh;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.8)),url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80");background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;padding:90px 8% 40px}
+    .hero h1{font-size:4rem;color:#51f5b7;text-shadow:0 0 20px black}
+    .hero p{max-width:850px;margin:20px auto;font-size:1.2rem}
+    .btn{display:inline-block;margin:10px;padding:14px 25px;background:#51f5b7;color:#061f1f;border-radius:30px;text-decoration:none;font-weight:bold;box-shadow:0 0 25px rgba(81,245,183,.45)}
+    section{padding:80px 8%}
+    .title{text-align:center;font-size:2.4rem;color:#51f5b7;margin-bottom:15px}
+    .sub{text-align:center;max-width:850px;margin:0 auto 35px;color:#ddd}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+    .card{background:rgba(255,255,255,.08);border:1px solid rgba(81,245,183,.35);border-radius:22px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:.3s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 0 25px rgba(81,245,183,.25)}
+    .card h3{color:#51f5b7;margin-bottom:10px}
+    input,select,textarea{width:100%;padding:13px;border:none;border-radius:12px;margin:8px 0;background:#f3f3f3;color:#111}
+    button{padding:13px 20px;border:none;border-radius:25px;background:#51f5b7;color:#061f1f;font-weight:bold;cursor:pointer;margin-top:10px}
+    .appbox{background:rgba(0,0,0,.35);border:1px solid rgba(81,245,183,.4);border-radius:25px;padding:25px;margin-top:25px}
+    .tag{display:inline-block;background:#51f5b7;color:#061f1f;padding:5px 10px;border-radius:20px;font-size:.8rem;font-weight:bold;margin:5px 5px 5px 0}
+    .result{background:rgba(255,255,255,.1);padding:18px;border-radius:18px;margin:15px 0;border-left:5px solid #51f5b7}
+    .result a{color:#51f5b7;font-weight:bold}
+    .score{font-weight:bold;color:#51f5b7}
+    .story{border-left:5px solid #51f5b7;background:rgba(255,255,255,.08);padding:18px;border-radius:15px;margin:12px 0}
+    footer{text-align:center;background:black;color:#aaa;padding:35px}
+    @media(max-width:750px){.hero h1{font-size:2.7rem}nav{flex-direction:column}nav a{font-size:.75rem;margin:6px}}
   </style>
 </head>
-
 <body>
 
-  <nav>
-    <h2>Care4All</h2>
-    <div>
-      <a href="#problem">Problem</a>
-      <a href="#solution">Solution</a>
-      <a href="#features">Features</a>
-      <a href="#stories">Stories</a>
+<nav>
+  <h2>Care4All</h2>
+  <div>
+    <a href="#providers">Find Care</a>
+    <a href="#plans">Compare Plans</a>
+    <a href="#pricing">Prices</a>
+    <a href="#terms">Terms</a>
+    <a href="#stories">Stories</a>
+  </div>
+</nav>
+
+<header>
+  <div class="hero">
+    <h1>Healthcare Should Be Clear.</h1>
+    <p>Care4All helps people find affordable providers, compare insurance plans, understand healthcare costs, and make confident decisions before receiving care.</p>
+    <a class="btn" href="#providers">Find Affordable Care</a>
+    <a class="btn" href="#plans">Compare Plans</a>
+  </div>
+</header>
+
+<section id="mission">
+  <h2 class="title">Why Care4All Exists</h2>
+  <p class="sub">Healthcare costs are rising, coverage is confusing, and many people do not know where to turn. Care4All turns complicated healthcare information into simple tools people can actually use.</p>
+  <div class="grid">
+    <div class="card"><h3>🏥 Affordable Providers</h3><p>Search real healthcare resources that serve insured, uninsured, and underinsured patients.</p></div>
+    <div class="card"><h3>💳 Plan Comparison</h3><p>Compare monthly premiums, deductibles, copays, and out-of-pocket costs side by side.</p></div>
+    <div class="card"><h3>💰 Price Transparency</h3><p>Understand possible costs before going to a clinic, instead of being surprised later.</p></div>
+    <div class="card"><h3>🤝 Community Voice</h3><p>Share stories, recommendations, and warnings to help others navigate care.</p></div>
+  </div>
+</section>
+
+<section id="providers">
+  <h2 class="title">Find Affordable Providers</h2>
+  <p class="sub">Filter real healthcare resources by need, location, and insurance situation.</p>
+
+  <div class="appbox">
+    <input id="providerSearch" placeholder="Search need: dental, primary care, insurance, uninsured, Maryland..." onkeyup="filterProviders()">
+    <select id="providerFilter" onchange="filterProviders()">
+      <option value="all">All care options</option>
+      <option value="uninsured">No insurance / uninsured</option>
+      <option value="sliding">Sliding fee scale</option>
+      <option value="insurance">Insurance help</option>
+      <option value="maryland">Maryland</option>
+      <option value="dental">Dental</option>
+      <option value="behavioral">Behavioral health</option>
+    </select>
+    <div id="providerResults"></div>
+  </div>
+</section>
+
+<section id="plans">
+  <h2 class="title">Compare Insurance Plans</h2>
+  <p class="sub">Enter two plans and Care4All will estimate which one may be better based on yearly cost and coverage quality.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Plan A</h3>
+      <input id="aName" placeholder="Plan name">
+      <input id="aPremium" type="number" placeholder="Monthly premium ($)">
+      <input id="aDeductible" type="number" placeholder="Deductible ($)">
+      <input id="aCopay" type="number" placeholder="Primary care copay ($)">
+      <input id="aMax" type="number" placeholder="Out-of-pocket max ($)">
     </div>
-  </nav>
-
-  <header>
-    <div class="hero">
-      <h1>Care Should Be Clear.</h1>
-      <p>Healthcare should not feel confusing, unaffordable, or out of reach. Care4All helps people compare plans, find affordable providers, and understand their care options in simple language.</p>
-      <a class="btn" href="#problem">Explore the Mission</a>
+    <div class="card">
+      <h3>Plan B</h3>
+      <input id="bName" placeholder="Plan name">
+      <input id="bPremium" type="number" placeholder="Monthly premium ($)">
+      <input id="bDeductible" type="number" placeholder="Deductible ($)">
+      <input id="bCopay" type="number" placeholder="Primary care copay ($)">
+      <input id="bMax" type="number" placeholder="Out-of-pocket max ($)">
     </div>
-  </header>
+  </div>
+  <button onclick="comparePlans()">Compare Plans</button>
+  <div id="planResult" class="appbox"></div>
+</section>
 
-  <section id="problem">
-    <h2 class="title">The Problem</h2>
-    <div class="split">
-      <p>
-        Healthcare premiums and out-of-pocket costs continue to rise, leaving many people paying more for less coverage. This creates a serious burden for families, especially marginalized communities already facing economic barriers.
-      </p>
-      <div class="highlight">
-        Higher costs. Confusing plans. Less access. People deserve better.
-      </div>
+<section id="pricing">
+  <h2 class="title">Transparent Pricing Tool</h2>
+  <p class="sub">This tool does not replace a clinic’s official quote, but it helps users know what to ask before booking care.</p>
+
+  <div class="appbox">
+    <select id="service">
+      <option value="primary">Primary care visit</option>
+      <option value="dental">Dental care</option>
+      <option value="behavioral">Behavioral health</option>
+      <option value="insurance">Insurance enrollment help</option>
+    </select>
+    <select id="insuranceStatus">
+      <option value="insured">I have insurance</option>
+      <option value="uninsured">I do not have insurance</option>
+      <option value="unknown">I am not sure</option>
+    </select>
+    <button onclick="estimateCost()">Show What To Ask</button>
+    <div id="costResult" class="result"></div>
+  </div>
+</section>
+
+<section id="terms">
+  <h2 class="title">Simple Healthcare Terms</h2>
+  <p class="sub">No confusing language. These are real healthcare terms explained simply.</p>
+
+  <div class="grid">
+    <div class="card"><h3>Premium</h3><p>The monthly amount you pay to keep your insurance active.</p></div>
+    <div class="card"><h3>Deductible</h3><p>The amount you pay for covered care before your insurance starts paying more of the cost.</p></div>
+    <div class="card"><h3>Copay</h3><p>A fixed amount you pay for a service, like a doctor visit or prescription.</p></div>
+    <div class="card"><h3>Coinsurance</h3><p>Your percentage share of a covered healthcare cost after your deductible.</p></div>
+    <div class="card"><h3>Out-of-Pocket Maximum</h3><p>The most you pay in a year for covered services before your plan pays 100% of covered costs.</p></div>
+    <div class="card"><h3>Sliding Fee Scale</h3><p>A reduced price based on your income and family size, often used by community health centers.</p></div>
+  </div>
+</section>
+
+<section id="bestvalue">
+  <h2 class="title">Best Value Suggestions</h2>
+  <p class="sub">Care4All recommends starting with community health centers, official marketplaces, and local navigators before paying full price.</p>
+  <div class="grid">
+    <div class="card"><h3>📍 If uninsured</h3><p>Start with HRSA Find a Health Center, 211 Maryland, CCI Health Services, Mary’s Center, or Chesapeake Health Care.</p></div>
+    <div class="card"><h3>⚖️ If comparing plans</h3><p>Do not only look at the premium. Compare deductible, copay, coinsurance, and out-of-pocket maximum.</p></div>
+    <div class="card"><h3>🔎 Search by need</h3><p>Try searches like “dental no insurance,” “primary care sliding fee,” or “insurance enrollment help.”</p></div>
+  </div>
+</section>
+
+<section id="stories">
+  <h2 class="title">Community Stories</h2>
+  <p class="sub">A space for people to share experiences, warnings, and recommendations.</p>
+
+  <div class="appbox">
+    <input id="storyName" placeholder="Your name or nickname">
+    <textarea id="storyText" placeholder="Share your healthcare experience, recommendation, or warning..."></textarea>
+    <button onclick="addStory()">Post Story</button>
+    <div id="storyList">
+      <div class="story">“I want to know the price before I go, not after I get the bill.”</div>
+      <div class="story">“Healthcare websites should explain things in normal words.”</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="solution">
-    <h2 class="title">The Care4All Solution</h2>
-    <p style="text-align:center; max-width:850px; margin:auto;">
-      Care4All is designed to make healthcare easier to understand. Instead of overwhelming users with confusing terms, the site breaks down coverage, prices, and provider options in a way real people can actually use.
-    </p>
+<section id="sources">
+  <h2 class="title">Real Resource Links</h2>
+  <div class="grid">
+    <div class="card"><h3>Maryland Health Connection</h3><p>Maryland’s official health insurance marketplace.</p><a class="btn" href="https://www.marylandhealthconnection.gov/" target="_blank">Visit</a></div>
+    <div class="card"><h3>HRSA Find a Health Center</h3><p>Search federally funded health centers by location.</p><a class="btn" href="https://findahealthcenter.hrsa.gov/" target="_blank">Visit</a></div>
+    <div class="card"><h3>211 Maryland</h3><p>Find free and low-cost health insurance and local support.</p><a class="btn" href="https://211md.org/resources/health-care/health-insurance/" target="_blank">Visit</a></div>
+    <div class="card"><h3>Healthcare.gov Glossary</h3><p>Official definitions for health insurance terms.</p><a class="btn" href="https://www.healthcare.gov/glossary/" target="_blank">Visit</a></div>
+  </div>
+</section>
 
-    <div class="cards">
-      <div class="card">
-        <h3>Compare Plans</h3>
-        <p>See insurance options side-by-side using clear, simple explanations.</p>
-      </div>
-      <div class="card">
-        <h3>Find Affordable Care</h3>
-        <p>Locate private practices and clinics that offer care with or without insurance.</p>
-      </div>
-      <div class="card">
-        <h3>Know Prices First</h3>
-        <p>View estimated service costs before walking into a clinic or appointment.</p>
-      </div>
+<footer>
+  <p>Care4All © 2026 | Affordable Care. Clear Choices. Stronger Communities.</p>
+</footer>
+
+<script>
+const providers = [
+  {
+    name:"Maryland Health Connection",
+    type:"insurance maryland",
+    care:"Insurance plans, Medicaid, financial help",
+    location:"Maryland",
+    price:"Official marketplace; estimates depend on income and household",
+    link:"https://www.marylandhealthconnection.gov/"
+  },
+  {
+    name:"HRSA Find a Health Center",
+    type:"uninsured sliding dental behavioral maryland",
+    care:"Federally funded health centers for primary care, dental, behavioral health, and more",
+    location:"Nationwide, including Maryland",
+    price:"Health centers may offer care based on ability to pay",
+    link:"https://findahealthcenter.hrsa.gov/"
+  },
+  {
+    name:"211 Maryland Health Insurance Resources",
+    type:"insurance uninsured maryland",
+    care:"Free and low-cost health insurance resources and local help",
+    location:"Maryland",
+    price:"Connects users to free or low-cost options",
+    link:"https://211md.org/resources/health-care/health-insurance/"
+  },
+  {
+    name:"Mary’s Center",
+    type:"uninsured sliding dental behavioral maryland",
+    care:"Medical, dental, behavioral health, social services, insurance help",
+    location:"DC and Maryland area",
+    price:"Sliding fee discount based on income and family size",
+    link:"https://www.maryscenter.org/social-services/insurance-and-fees/"
+  },
+  {
+    name:"CCI Health Services",
+    type:"uninsured sliding dental behavioral maryland",
+    care:"Primary care, behavioral health, dental, prenatal, and community health services",
+    location:"Maryland",
+    price:"Offers sliding scale fee discount program",
+    link:"https://cciweb.org/"
+  },
+  {
+    name:"Chesapeake Health Care",
+    type:"uninsured sliding dental behavioral maryland",
+    care:"Medical, dental, behavioral health, and pharmacy services",
+    location:"Somerset, Wicomico, and Worcester counties",
+    price:"Serves patients regardless of insurance status or ability to pay",
+    link:"https://chesapeakehc.org/"
+  },
+  {
+    name:"Baltimore Medical System",
+    type:"uninsured sliding maryland",
+    care:"Community health center serving Baltimore-area patients",
+    location:"Greater Baltimore",
+    price:"Community health center focused on underserved communities",
+    link:"https://bmsi.org/"
+  },
+  {
+    name:"Prince George’s County Family Health Services",
+    type:"maryland primary",
+    care:"Preventive, clinical, and outreach health services",
+    location:"Prince George’s County",
+    price:"County health services; contact program for eligibility and cost",
+    link:"https://www.princegeorgescountymd.gov/departments-offices/health/family-health-services"
+  }
+];
+
+function filterProviders(){
+  const search = document.getElementById("providerSearch").value.toLowerCase();
+  const filter = document.getElementById("providerFilter").value;
+  const box = document.getElementById("providerResults");
+  const filtered = providers.filter(p => {
+    const allText = (p.name+p.type+p.care+p.location+p.price).toLowerCase();
+    const matchesSearch = allText.includes(search);
+    const matchesFilter = filter === "all" || allText.includes(filter);
+    return matchesSearch && matchesFilter;
+  });
+
+  box.innerHTML = filtered.map(p => `
+    <div class="result">
+      <h3>${p.name}</h3>
+      <p><strong>Care:</strong> ${p.care}</p>
+      <p><strong>Location:</strong> ${p.location}</p>
+      <p><strong>Cost info:</strong> ${p.price}</p>
+      <span class="tag">${p.type}</span><br>
+      <a href="${p.link}" target="_blank">Open real resource</a>
     </div>
-  </section>
+  `).join("") || "<p>No matches. Try searching “uninsured,” “dental,” “sliding fee,” or “insurance.”</p>";
+}
 
-  <section id="features">
-    <h2 class="title">What Makes It Different?</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Simple Language</h3>
-        <p>No confusing healthcare terms. Everything is explained in everyday words.</p>
-      </div>
-      <div class="card">
-        <h3>Accessible Design</h3>
-        <p>Built to be easy to navigate for people who struggle with complex healthcare websites.</p>
-      </div>
-      <div class="card">
-        <h3>Community Powered</h3>
-        <p>Users can share real experiences, recommendations, and advice to help others.</p>
-      </div>
-    </div>
-  </section>
+function comparePlans(){
+  const aName = document.getElementById("aName").value || "Plan A";
+  const bName = document.getElementById("bName").value || "Plan B";
 
-  <section id="stories">
-    <h2 class="title">Real People. Real Stories.</h2>
-    <p style="text-align:center; max-width:800px; margin:auto;">
-      Care4All gives users space to speak up about rising healthcare costs, poor coverage, and barriers to care.
-    </p>
+  const aPremium = Number(document.getElementById("aPremium").value);
+  const aDeductible = Number(document.getElementById("aDeductible").value);
+  const aCopay = Number(document.getElementById("aCopay").value);
+  const aMax = Number(document.getElementById("aMax").value);
 
-    <div class="story">
-      “I should not have to choose between paying my bills and getting medical care.”
-    </div>
+  const bPremium = Number(document.getElementById("bPremium").value);
+  const bDeductible = Number(document.getElementById("bDeductible").value);
+  const bCopay = Number(document.getElementById("bCopay").value);
+  const bMax = Number(document.getElementById("bMax").value);
 
-    <div class="story">
-      “I want to know the price before I go, not after I get the bill.”
-    </div>
+  const aYearly = (aPremium * 12) + aDeductible;
+  const bYearly = (bPremium * 12) + bDeductible;
 
-    <div class="story">
-      “Healthcare should be understandable for everyone, not just people who know the system.”
-    </div>
-  </section>
+  function quality(max, deductible, copay){
+    let score = 100;
+    if(max > 9000) score -= 25;
+    if(deductible > 4000) score -= 25;
+    if(copay > 50) score -= 15;
+    if(score >= 75) return "Good";
+    if(score >= 50) return "Average";
+    return "Bad";
+  }
 
-  <section>
-    <h2 class="title">Our Mission</h2>
-    <p style="text-align:center; max-width:850px; margin:auto; font-size:1.1rem;">
-      Care4All fights for healthcare access, transparency, and fairness by helping people make informed decisions before they pay for care.
-    </p>
-  </section>
+  const winner = aYearly < bYearly ? aName : bName;
 
-  <footer>
-    <p>Care4All © 2026 | Affordable Care. Clear Choices. Stronger Communities.</p>
-  </footer>
+  document.getElementById("planResult").innerHTML = `
+    <h3>Plan Comparison Result</h3>
+    <p><strong>${aName}</strong>: Estimated yearly premium + deductible = $${aYearly.toLocaleString()} | Coverage Quality: <span class="score">${quality(aMax,aDeductible,aCopay)}</span></p>
+    <p><strong>${bName}</strong>: Estimated yearly premium + deductible = $${bYearly.toLocaleString()} | Coverage Quality: <span class="score">${quality(bMax,bDeductible,bCopay)}</span></p>
+    <p class="score">Best value based on your numbers: ${winner}</p>
+    <p><em>Reminder:</em> also check provider network, prescriptions, specialist costs, and whether your preferred doctor accepts the plan.</p>
+  `;
+}
+
+function estimateCost(){
+  const service = document.getElementById("service").value;
+  const status = document.getElementById("insuranceStatus").value;
+  let message = "";
+
+  if(status === "uninsured"){
+    message = "Ask about a sliding fee scale, self-pay discount, eligibility documents, and whether the clinic is a federally qualified health center.";
+  } else if(status === "insured"){
+    message = "Ask whether the provider is in-network, what your copay is, whether the deductible applies, and what your estimated out-of-pocket cost will be.";
+  } else {
+    message = "Start with Maryland Health Connection, 211 Maryland, or an enrollment navigator to check if you qualify for free or low-cost coverage.";
+  }
+
+  document.getElementById("costResult").innerHTML = `
+    <h3>Before You Book</h3>
+    <p>${message}</p>
+    <p><strong>Script:</strong> “Can you tell me the estimated cost for this ${service} visit before I schedule?”</p>
+  `;
+}
+
+function addStory(){
+  const name = document.getElementById("storyName").value || "Community Member";
+  const text = document.getElementById("storyText").value;
+  if(!text.trim()) return alert("Write your story first.");
+  const div = document.createElement("div");
+  div.className = "story";
+  div.innerHTML = `<strong>${name}:</strong> ${text}`;
+  document.getElementById("storyList").prepend(div);
+  document.getElementById("storyText").value = "";
+}
+
+filterProviders();
+</script>
 
 </body>
 </html>
